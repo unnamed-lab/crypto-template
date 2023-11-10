@@ -1,0 +1,222 @@
+{% extends 'partials/base.html'%}
+{% load static %}
+{% block content %}
+<section class="page-sc-two flex items-center">
+    <div class="container">
+        <div class="sc-two-content">
+            <div class="sc-two-left">
+                <img src="{% static './assets/images/header.png' %}" float/>
+            </div>
+            <div class="sc-two-right">
+                <h2 class="large-title">Trade Cryptocurrencies easily with BitTrade</h2>
+                <p class="text text-base">Trade and Invest Cryptocurrencies on the most secure crypto platform.</p>
+                {% if request.user.is_authenticated %}
+                <a href="{% url "core:dashboard" %}"  class="glow-on-hover btn btn-base ">Dashboard</a>
+                {% else %}
+                <a href="{% url "userauths:sign-in" %}"  class="glow-on-hover btn btn-base ">Get Started</a>
+                {% endif %}
+                
+
+              
+            </div>
+        </div>
+    </div>
+</section>
+<div class="header-intro flex-1 flex flex-col items-center justify-center text-center">
+    <h1 id="float">We make crypto so simple.</h1>
+    {% if request.user.is_authenticated %}
+    <a href="{% url "core:dashboard" %}"  class="glow-on-hover btn btn-base ">Dashboard</a>
+    {% else %}
+    <a href="{% url "userauths:sign-in" %}"  class="glow-on-hover btn btn-base ">Get
+        Started</a>
+    {% endif %}
+
+</div>
+</div>
+</div>
+</header>
+<div class="info flex items-center justify-center">
+    <div class="container">
+        <div class="info-content grid">
+          
+            <div class="info-item text-center" >
+                <img src="{% static './assets/icons/create_icon.svg' %}" alt="" rotate/>
+                <h3 class="info-item-title">Create</h3>
+                <p class="text-base text info-item-text">Click on the "Sign Up" button on our homepage.
+                    Fill in your details, a username, email address, and a secure password.</p>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'core:dashboard' %}" class="flex-inline items-center btn-link">
+                    <span class="link-text text-lavender text text-base">Visit dashboard</span>
+                    <img src="{% static './assets/icons/arrow.svg' %}" class="link-icon" forward/>
+                </a>
+                {% else %}
+                <a href="{% url 'userauths:sign-up' %}" class="flex-inline items-center btn-link">
+                    <span class="link-text text-lavender text text-base">Get Started</span>
+                    <img src="{% static './assets/icons/arrow.svg' %}" class="link-icon" forward/>
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="info-item text-center" >
+                <img src="{% static './assets/icons/login_icon.svg' %}" alt="" rotate/>
+                <h3 class="info-item-title">Login</h3>
+                <p class="text-base text info-item-text">Verify your email and use your registered Email address and secure password to log in securely</p>
+                <a href="#" class="flex-inline items-center btn-link">
+                    <span class="link-text text-lavender text text-base">Find an ATM</span>
+                    <img src="{% static './assets/icons/arrow.svg' %}" class="link-icon" forward/>
+                </a>
+            </div>
+
+            <div class="info-item text-center">
+                <img src="{% static './assets/icons/manage_icon.svg' %}" alt=""  rotate/>
+                <h3 class="info-item-title">Manage</h3>
+                <p class="text-base text info-item-text">Explore our easy-to-use interface for making transactions.
+                    Invest and withdraw various cryptocurrencies securely.</p>
+                {% if request.user.is_authenticated %}
+                <a href="{% url "core:dashboard" %}" class="flex-inline items-center btn-link">
+                    <span class="link-text text-lavender text text-base">Visit dashboard</span>
+                    <img src="{% static './assets/icons/arrow.svg' %}" class="link-icon" forward/>
+                </a>
+                {% else %}
+                <a href="{% url "userauths:sign-in" %}" class="flex-inline items-center btn-link">
+                    <span class="link-text text-lavender text text-base">Get Started</span>
+                    <img src="{% static './assets/icons/arrow.svg' %}" class="link-icon" forward/>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- end of header -->
+<div
+    style="height:62px; background-color: hsl(240, 5%, 8%); overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 hsl(240, 5%, 8%);padding:1px;padding: 0px; margin: 0px; width: 100%;">
+    <div style="height:40px; padding:0px; margin:0px; width: 100%;"><iframe
+            src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover=no"
+            width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+            style="border:0;margin:0;padding:0;"></iframe></div>
+    <div
+        style="color: #626B7F; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; display:none; font-family: Verdana, Tahoma, Arial, sans-serif;">
+        <a href="https://coinlib.io" target="_blank"
+            style="font-weight: 500; color: #626B7F; text-decoration:none; font-size:11px; display:none;">Cryptocurrency
+            Prices</a>&nbsp;by Coinlib
+    </div>
+</div>
+
+
+<main>
+    <section class="page-sc-one flex items-center justify-center" >
+        <div class="container">
+            <div class="sc-one-content text-center">
+                <div class="title-wrapper">
+                    <h2 class="large-title">A Crypto trading platform that invest in you.</h2>
+                    <p class="text text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus qui
+                        ipsum libero, porro accusamus possimus.</p>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url "core:dashboard" %}" class="glow-on-hover btn btn-base btn-g-blue-veronica text-base">Dashboard</a>
+                    {% else %}
+                    <a href="{% url "userauths:sign-in" %}" class="glow-on-hover btn btn-base btn-g-blue-veronica text-base">Get Started</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-sc-two flex items-center">
+        <div class="container">
+            <div class="sc-two-content">
+                <div class="sc-two-left">
+                    <img src="{% static './assets/images/support.png' %}" float/>
+                </div>
+                <div class="sc-two-right">
+                    <h2 class="large-title">24/7 access to full service customer support</h2>
+                    <p class="text text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+                        dolores modi natus quod aspernatur dicta?</p>
+                    <a href="" class="btn btn-base btn-white text-base">Contact Us</a>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-sc-fees flex items-center">
+        <div class="container">
+            <div class="sc-fees-content text-center">
+                <div class="title-wrapper">
+                    <h2 class="large-title">Trade and Invest with the lowest fees in the industry</h2>
+                    <p class="text text-base">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, pariatur
+                        sit. Id nisi perspiciatis eveniet?</p>
+                    <a href="#" class="flex-inline items-center btn-link">
+                        <span class="link-text text-lavender text text-base">Learn More</span>
+                        <img src="{% static './assets/icons/arrow.svg' %}" class="link-icon" forward/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="info flex items-center justify-center">
+        <div class="container">
+            <div class="info-content grid">
+                {% for c in coins %}
+                <div class="info-item text-center" >
+                    <img src="{{c.image.url}}" alt="" />
+                    <h3 class="info-item-title">{{c.title}}</h3>
+                    <p class="text-base text info-item-text">{{c.description}}</p>
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'core:coin-detail' c.pid %}" class="flex-inline items-center btn-link">
+                        <span class="link-text text-lavender text text-base">Invest</span>
+                        <img src="{% static './assets/icons/arrow.svg' %}" class="link-icon" forward/>
+                    </a>
+                    {% else %}
+                    <a href="{% url 'userauths:sign-up' %}" class="flex-inline items-center btn-link">
+                        <span class="link-text text-lavender text text-base">Trade</span>
+                        <img src="{% static './assets/icons/arrow.svg' %}" class="link-icon" forward/>
+                    </a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="cryptohopper-web-widget" data-id="4" data-chart_color="#933ffe" data-text_color="#fbf2f2" data-background_color="#000000" data-numcoins="10" data-theme="dark" data-list_design="3"  data-realtime="on"></div>
+
+    {% comment %} <div class="cryptohopper-web-widget" data-id="1" data-table_title="List of Cryptocurrencies " data-numcoins="50" data-table_style="dark" data-realtime="on" data-table_length="10"></div> {% endcomment %}
+  
+    <section class="page-sc-invest flex items-center">
+        <div class="container">
+            <div class="sc-two-content">
+                <div class="sc-two-left">
+                    <h2 class="large-title">Take your first step into safe, secure crypto investing</h2>
+                    <p class="text text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+                        velit, laudantium voluptatem incidunt, aperiam reiciendis corporis, exercitationem obcaecati ut
+                        cum excepturi! Ea, alias dolores.</p>
+                    <a href="#" class="btn btn-base btn-white text-base">Get Started</a>
+                </div>
+                <div class="sc-two-right">
+                    <img src="{% static './assets/images/support.png' %}" float/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-sc-subscribe">
+        <div class="container">
+            <div class="sc-subscribe-content text-center">
+                <h2 class="large-title">Receive transmissions</h2>
+                <p class="text text-base">Unsubscribe at any time. <span class="text-white">Privacy policy</span></p>
+
+                <form class="flex items-center justify-center">
+                    <div class="input-group flex items-center justify-between">
+                        <input type="text" class="input-control" placeholder="Email Address">
+                        <button type="submit" class="input-btn flex items-center justify-center">
+                            <img src="{% static './assets/icons//arrow_white.svg' %}" />
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}

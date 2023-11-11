@@ -70,7 +70,7 @@ def coin_detail_view(request, pid):
     
     return render(request, "core/product-detail.html", context)
 
-@login_required
+
 def send_payment_review(request, pid):
     user = request.user
     product = Coin.objects.get(pid=pid)
@@ -85,7 +85,7 @@ def send_payment_review(request, pid):
         invested_return = invested_return,
     )
 
-    return redirect(request, "core/wallet-details")
+    return render(request, "core/wallet-details.html")
 
 @login_required
 def dashboard_view(request):

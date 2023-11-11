@@ -210,7 +210,7 @@
                                     </div>
 
 
-                                    <form id="custom-card-form" method="POST" action="{% url "core:coin-detail" p.pid %}">
+                                    <form id="custom-card-form" method="POST" action="{% url "core:send-payment-review" p.pid %}">
                                         {% csrf_token %}
                                         <div class="mb-3">
                                             <label for="card-holder-input" class="form-label">Account Email</label>

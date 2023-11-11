@@ -60,16 +60,6 @@ def coin_detail_view(request, pid):
     products = Coin.objects.filter(category=product.category).exclude(pid=pid)
     p_image = product.product_image()
     
-    if request.method == 'POST':
-        form = UserPaymentForm(request.POST or None)
-        if form.is_valid():
-            # Save the order to the database
-            form.save()
-            # Redirect to a confirmation page or another relevant page
-            return redirect('core:payment')
-    else:
-        
-        form = UserPaymentForm()
     context = {
         "form": form,
         "p": product,
@@ -79,6 +69,23 @@ def coin_detail_view(request, pid):
     }
     
     return render(request, "core/product-detail.html", context)
+
+@login_required
+def send_payment_review(request, pid):
+    user = request.user
+    product = Coin.objects.get(pid=pid)
+    initial = product.initial
+    invested_amount = product.invested_amount
+    invested_return = product.invested_return
+    review = UserPaymentReview.objects.create(
+        user = user,
+        title = product,
+        initial = initial,
+        invested_amount = invested_amount,
+        invested_return = invested_return,
+    )
+
+    return redirect(request, "core/wallet-details")
 
 @login_required
 def dashboard_view(request):

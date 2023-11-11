@@ -48,9 +48,11 @@ def register_view(request):
     form = UserRegisterForm()
     if request.method == "POST":
         address = request.POST['address']
+        username = request.POST['username']
         form = UserRegisterForm(request.POST or None)
         
         if form.is_valid():
+            
             new_user = form.save()
             
             username = form.cleaned_data.get("username")

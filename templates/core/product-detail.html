@@ -210,15 +210,17 @@
                                     </div>
 
 
-                                    <form id="custom-card-form" method="POST" action=''>
+                                    <form id="custom-card-form" method="POST" action="{% url "core:coin-detail" p.pid %}">
                                         {% csrf_token %}
                                         <div class="mb-3">
-                                            <label for="card-num-input" class="form-label">Account Holder</label>
-                                           {{form.user}}
+                                            <label for="card-holder-input" class="form-label">Account Email</label>
+                                            <input type="text" class="form-control" name="email" id="card-holder-input"
+                                                value="{{user.username}}" disabled />
                                         </div>
                                         <div class="mb-3">
-                                            <label for="card-num-input" class="form-label">Coin</label>
-                                            {{form.title}}
+                                            <label for="card-holder-input" class="form-label">Account Email</label>
+                                            <input type="text" class="form-control" name="email" id="card-holder-input"
+                                                value="{{p.title}}" disabled />
                                         </div>
 
                                         <div class="mb-3">
@@ -231,7 +233,8 @@
                                             <div class="col-lg-4">
                                                 <div>
                                                     <label for="expiry-month-input" class="form-label">Amount to invest</label>
-                                                    {{form.invested_amount}}
+                                                    <input type="text" class="form-control" name="email" id="card-holder-input"
+                                                value="{{p.invested_amount}}" disabled />
                                 
                                                 </div>
                                             </div>
@@ -240,7 +243,8 @@
                                             <div class="col-lg-4">
                                                 <div>
                                                     <label for="expiry-year-input" class="form-label">Invested Return</label>
-                                                   {{form.invested_return}}
+                                                    <input type="text" class="form-control" name="email" id="card-holder-input"
+                                                    value="{{p.invested_return}}" disabled />
                                                 </div>
                                             </div>
                                             <!-- end col -->

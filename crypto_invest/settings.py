@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-0tgu5vhts8_)lhzrzazlq)sv0=dcmdq^z7-!sz8c-(o4!a4xu3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = "https://bittrade.onrender.com"
+ALLOWED_HOSTS = ["bittrade.onrender.com"]
 
 
 # Application definition
@@ -84,13 +84,15 @@ WSGI_APPLICATION = "crypto_invest.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'mto9hyCHRZRVGdAR',
+        'HOST': 'db.fqjvatobreqdzaelsgxt.supabase.co',
+        'PORT': '5432',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

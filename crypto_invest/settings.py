@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-0tgu5vhts8_)lhzrzazlq)sv0=dcmdq^z7-!sz8c-(o4!a4xu3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = "https://bittrade.onrender.com"
+ALLOWED_HOSTS = "bittrade.onrender.com"
 
 
 # Application definition

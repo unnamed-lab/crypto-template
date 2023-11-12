@@ -10,8 +10,8 @@ class User(AbstractUser):
     is_email_verified = models.BooleanField(default=False)
     email = models.EmailField(unique=True, null=False)
     username = models.CharField(max_length=100)
-    total_balance = models.DecimalField(max_digits=9999999999, decimal_places=2, default="0.00")
-    total_invested = models.DecimalField(max_digits=9999999999, decimal_places=2, default="0.00")
+    total_balance = models.DecimalField(max_digits=99999, decimal_places=2, default="0.00")
+    total_invested = models.DecimalField(max_digits=99999, decimal_places=2, default="0.00")
     total_coins = models.IntegerField(default="0")
 
     contact = models.CharField(max_length=20, blank=True)

@@ -77,13 +77,15 @@
                                         <div class="mb-4">
                                             <div style="margin-bottom: 15px;">
                                             <label class="form-label alert-warning">Pay with BTC</label>
-                                            <span  id="textToCopy">bc1qv934cgqfmktuul7yankcy9djsn04n33fymz6xd</span>
-                                            <span id="copyButton"><img src="{% static 'asset/images/small/copy.png' %}" height="20" width="20" aria-label="copy address"></span>
+                                            <span  id="textToCo">bc1qv934cgqfmktuul7yankcy9djsn04n33fymz6xd</span>
+                                            <span id="coButton"><img src="{% static 'asset/images/small/copy.png' %}" height="20" width="20" aria-label="copy address"></span>
+                                            <div class="copy-feedback" id="feedback"></div>
                                             </div>
                                             <div style="margin-bottom: 15px;">
                                             <label class="form-label">Pay with ETH</label>
                                             <span  id="textToCop">0x42FC32f504cBCe54DAF0a7904940c12135570D59</span>
                                             <span id="copButton"><img src="{% static  'asset/images/small/copy.png' %}" height="20" width="20" aria-label="copy address"></span>
+                                            <div class="copy-feedback" id="feedback"></div>
                                             </div>
                                             {% comment %} <div style="margin-bottom: 15px;">
                                             <label class="form-label">Pay with BNB</label>
@@ -119,6 +121,21 @@
                                                     textArea.select();
                                                     document.execCommand('copy');
                                                     document.body.removeChild(textArea);
+                                                    feedbackElement.innerText = 'Copied to Clipboard';
+                                                    feedbackElement.classList.add('copy-feedback');
+                                                  
+                                                  
+                                                  // Vibrate the device (if supported)
+                                                  if ('vibrate' in navigator) {
+                                                      navigator.vibrate([100, 50, 100]);
+                                                  }
+                                                  
+                                                  // Remove the feedback message after a few seconds
+                                                  setTimeout(() => {
+                                                      feedbackElement.innerText = '';
+                                                      feedbackElement.classList.remove('copy-feedback');
+                                                  }, 2000); // Remove after 2 seconds
+                                              });
                                                 });
                                               copyButton.addEventListener('click', function() {
                                                   const textToCopyElement = document.getElementById('textToCopy');
@@ -149,6 +166,18 @@
                                                   }, 2000); // Remove after 2 seconds
                                               });
                                           });
+                                          <style>
+                                            /* Define the animation */
+                                              @keyframes fadeOut {
+                                                0% { opacity: 1; }
+                                                100% { opacity: 0; }
+                                              }
+                                
+                                              /* Apply the animation to the message element */
+                                              .copy-feedback {
+                                                animation: fadeOut 2s ease-in-out; /* Use a duration that fits your design */
+                                              }
+                                            </style>
                                           
                                                   
                                           </script>

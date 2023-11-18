@@ -108,5 +108,12 @@ def profile_settings_view(request):
 
 
 
+# views.py
+
+def custom_error_500_view(request, exception=None):
+    return render(request, 'core/error_500.html', status=500)
+
+def custom_error_404_view(request, exception=None):
+    return render(request, 'core/error_404.html', status=404)
 
 

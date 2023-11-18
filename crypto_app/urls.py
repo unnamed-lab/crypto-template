@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, dashboard_view, profile_view, profile_settings_view, coin_detail_view, coin_list_view, payment_view, send_payment_review,custom_error_404_view,custom_error_500_view
+from .views import index, dashboard_view, profile_view, profile_settings_view, coin_detail_view, coin_list_view, payment_view, send_payment_review
 
 app_name = "core"
 
@@ -13,5 +13,3 @@ urlpatterns = [
     path('app/profile-settings', profile_settings_view, name='profile-settings'),
     path('app/coin/payment', payment_view, name='payment'),
 ]
-handler500 = custom_error_500_view
-handler404 = custom_error_404_view
